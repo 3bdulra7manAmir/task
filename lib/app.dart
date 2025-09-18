@@ -54,5 +54,3 @@ class AppMaterial extends StatelessWidget {
     );
   }
 }
-
-

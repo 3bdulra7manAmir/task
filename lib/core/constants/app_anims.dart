@@ -4,5 +4,3 @@ abstract class AppAnims
 
   static const String welcome = 'assets/jsons/Lottie/Handwritten_Welcome.json';
 }
-
-

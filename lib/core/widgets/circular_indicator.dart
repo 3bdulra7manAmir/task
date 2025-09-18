@@ -11,7 +11,8 @@ class CustomLoadingIndicator extends StatefulWidget
   State<CustomLoadingIndicator> createState() => _CustomLoadingIndicatorState();
 }
 
-class _CustomLoadingIndicatorState extends State<CustomLoadingIndicator> with SingleTickerProviderStateMixin {
+class _CustomLoadingIndicatorState extends State<CustomLoadingIndicator> with 
+SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
   @override
@@ -38,7 +39,8 @@ class _CustomLoadingIndicatorState extends State<CustomLoadingIndicator> with Si
           animation: _controller,
           builder: (_, _) {
             final angle = _controller.value * 2 * pi;
-            final color = HSVColor.fromAHSV(1, (angle * 180 / pi) % 360, 1, 1).toColor();
+            final color = HSVColor.fromAHSV(1, (angle * 180 / pi) % 360, 1, 1)
+              .toColor();
             return CircularProgressIndicator(
               strokeWidth: 2.w,
               valueColor: AlwaysStoppedAnimation<Color>(color),
@@ -49,5 +51,3 @@ class _CustomLoadingIndicatorState extends State<CustomLoadingIndicator> with Si
     );
   }
 }
-
-

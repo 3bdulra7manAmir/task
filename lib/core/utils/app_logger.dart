@@ -19,8 +19,6 @@ class AppLogger {
   static void warning(String message) => _logger.w('$_yellow$message$_reset');
 
   static void error(String message, {Object? error, StackTrace? stackTrace}) =>
-    _logger.e('$_red$message$_reset', error: error == null ? null : '$_red$error$_reset',
-      stackTrace: stackTrace);
+    _logger.e('$_red$message$_reset', error: error == null ? null : 
+    '$_red$error$_reset', stackTrace: stackTrace);
 }
-
-

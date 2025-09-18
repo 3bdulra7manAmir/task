@@ -9,7 +9,7 @@ class ColorCubit extends Cubit<ColorState> {
   ColorCubit(this._generator) : super(const ColorInitial());
   final ColorGenerator _generator;
 
-  Future changeColor() async {
+  Future<void> changeColor() async {
     try {
       emit(const ColorLoading());
       await Future.delayed(const Duration(milliseconds: 200));
@@ -17,10 +17,10 @@ class ColorCubit extends Cubit<ColorState> {
       emit(ColorChanged(newColor));
     } 
     catch (error, stack) {
-      AppLogger.error('Failed to generate color', error: error, stackTrace: stack);
+      AppLogger.error('Failed to generate color', error: error, 
+        stackTrace: stack
+      );
       emit(const ColorFailure('Failed to generate color'));
     }
   }
 }
-
-

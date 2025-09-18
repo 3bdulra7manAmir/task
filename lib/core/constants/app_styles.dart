@@ -11,5 +11,3 @@ class AppStyles {
     color: Colors.black,
   );
 }
-
-

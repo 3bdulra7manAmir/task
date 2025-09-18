@@ -1,3 +1,5 @@
+import '../features/home/presentation/views/home_view.dart';
+
 abstract class AppRoutes
 {
   AppRoutes._();

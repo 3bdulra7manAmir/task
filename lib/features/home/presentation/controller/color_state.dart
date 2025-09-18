@@ -23,5 +23,3 @@ class ColorFailure extends ColorState {
   const ColorFailure(this.message);
   final String message;
 }
-
-
