@@ -1,0 +1,102 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+
+linter:
+  rules:
+
+    # ------------------------------------------------------------------------------
+    # Performance & Efficiency Rules
+    # ------------------------------------------------------------------------------
+    prefer_const_constructors: true              # Prefer const constructors to reduce rebuilds
+    prefer_const_literals_to_create_immutables: true # Prefer const for lists/maps to avoid unnecessary allocations
+    avoid_redundant_argument_values: true        # Avoid explicitly passing default values
+    prefer_final_fields: true                    # Use `final` for fields that are never reassigned
+    prefer_final_locals: true                    # Use `final` for variables that are not reassigned
+    
+    # ------------------------------------------------------------------------------
+    # Important Warnings & Best Practices
+    # ------------------------------------------------------------------------------
+    avoid_dynamic_calls: true                    # Avoid calling methods on dynamic objects
+    prefer_const_declarations: true              # Declare variables as const when possible
+    always_declare_return_types: true            # Always specify return types for functions
+
+    # ------------------------------------------------------------------------------
+    # Code Quality Improvements
+    # ------------------------------------------------------------------------------
+    empty_catches: true                          # Avoid empty catch blocks
+    avoid_returning_null: true                   # Avoid returning null in non-nullable contexts
+    avoid_renaming_method_parameters: true       # Avoid unnecessarily renaming inherited parameters
+    avoid_shadowing_type_parameters: true        # Avoid reusing generic type parameter names
+    avoid_types_as_parameter_names: true         # Disallow using types as parameter names
+    prefer_conditional_assignment: true          # Prefer conditional (`??=`) assignment over `if`
+    prefer_null_aware_operators: true            # Prefer null-aware operators (`??`, `?.`, etc.)
+    unnecessary_null_checks: true                # Avoid redundant null checks
+
+    # ------------------------------------------------------------------------------
+    # Readability & Style Rules
+    # ------------------------------------------------------------------------------
+    prefer_single_quotes: true                   # Use single quotes for consistency
+    prefer_is_empty: true                        # Prefer `isEmpty` over `length == 0`
+    prefer_is_not_empty: true                    # Prefer `isNotEmpty` over `length > 0`
+    prefer_typing_uninitialized_variables: true  # Add type annotations for uninitialized variables
+    sort_constructors_first: true                # Sort constructors before other methods
+    unnecessary_brace_in_string_interps: true    # Remove unnecessary string interpolation braces
+    unnecessary_getters_setters: true            # Remove getters/setters that do nothing
+    unnecessary_this: true                       # Avoid using `this.` unless required
+    non_constant_identifier_names: true          # Enforce camelCase for variables and methods
+    camel_case_types: true                       # Enforce camelCase for class/interface names
+    constant_identifier_names: true              # Enforce UPPER_CASE for consts and enums
+    sort_child_properties_last: true             # Put `child:` last in widget constructors
+
+    # ------------------------------------------------------------------------------
+    # Clean Imports & Structure
+    # ------------------------------------------------------------------------------
+    prefer_relative_imports: true                # Use relative imports within lib/
+    directives_ordering: true                    # Organize import/export directives consistently
+    file_names: true                             # Enforce correct file naming (e.g., snake_case)
+    implementation_imports: true                 # Prevent importing from lib/src directly
+    library_prefixes: true                       # Use prefixes for libraries with conflicting names
+
+    # ------------------------------------------------------------------------------
+    # Forbidden Practices
+    # ------------------------------------------------------------------------------
+    avoid_annotating_with_dynamic: true          # Avoid unnecessary use of `dynamic`
+    avoid_print: true                            # Avoid using print; use logging instead
+    avoid_unused_constructor_parameters: true    # Avoid unused parameters in constructors
+    no_self_assignments: true                    # Prevent `x = x` assignments
+
+    # ------------------------------------------------------------------------------
+    # Async & Future Handling
+    # ------------------------------------------------------------------------------
+    unawaited_futures: true                      # Handle Futures appropriately when not awaited
+
+    # ------------------------------------------------------------------------------
+    # Package & Dependency Hygiene
+    # ------------------------------------------------------------------------------
+    sort_pub_dependencies: true                  # Enforce alphabetical order in pubspec.yaml
+
+    # ------------------------------------------------------------------------------
+    # FIXED TYPOS (from your input)
+    # ------------------------------------------------------------------------------
+    avoid_single_cascade_in_expression_statements: true # Avoid using single cascade in a statement (use direct call instead)
+
+dart_code_metrics:
+  metrics-exclude:
+    - test/**
+
+  rules:
+  - avoid-unnecessary-setstate                 # Avoid calling setState when not needed
+  - avoid-wrapping-in-padding                 # Prefer wrapping parent widget in Padding
+  - always-remove-listener                    # Always dispose listeners to prevent memory leaks
+  - member-ordering                           # Enforce consistent member ordering in classes
+  - no-boolean-literal-compare                # Don't compare directly to `true`/`false`
+  - prefer-trailing-comma                     # Encourage trailing commas in widget trees
+  - arguments-ordering                        # Enforce logical argument ordering
+  - avoid-nested-conditional-expressions      # Avoid deeply nested conditionals for readability
+
+  metrics:
+    cyclomatic-complexity: 20                 # Max allowed branches/conditions in a method
+    maximum-nesting-level: 5                  # Avoid deeply nested code blocks
+    number-of-parameters: 4                   # Limit number of parameters for clarity
+    source-lines-of-code: 100                 # Limit length of a function to 100 lines
